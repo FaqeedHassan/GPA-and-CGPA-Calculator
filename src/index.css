@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --primary-bg: linear-gradient(to right, #6366f1, #8b5cf6); /* Default Indigo → Purple */
+  --btn-bg: #000000; /* yellow-400/80 */
+  --btn-hover: rgba(251, 191, 36, 0.9);
+  --btn-text: #ffffff;
+  --text-color: #ffffff;
+}
+
+.theme-light {
+  --primary-bg: linear-gradient(to right, #f8fafc, #e2e8f0); /* light gray to blue-gray */
+  --btn-bg: rgba(59, 130, 246, 0.9); /* blue-500 */
+  --btn-hover: rgba(59, 130, 246, 1);
+  --btn-text: #ffffff;
+  --text-color: #1e293b; /* slate-800 */
+}
+
+.theme-dark {
+  --primary-bg: linear-gradient(to right, #0f172a, #1e293b); /* navy to slate */
+  --btn-bg: rgba(30, 64, 175, 0.8); /* blue-800/80 */
+  --btn-hover: rgba(30, 64, 175, 0.95);
+  --btn-text: #ffffff;
+  --text-color: #ffffff;
+}
+
+
+option {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+@media (max-width: 1560px) {
+  .hide-on-1560 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 412px) {
+  .set-buttons {
+    margin-top: 10px;
+  }
+}
+
+
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
