@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import GPAForm from "./components/GPAForm";
 import CGPAForm from "./components/CGPAForm";
 import ThemeSwitcher from "./components/ThemeSwitcher";
-import studentImg from "./assets/student1.png";
-import teacherImg from "./assets/teacher3.png";
+import studentImg from "/assets/student1.png";
+import teacherImg from "/assets/teacher3.png";
 
 export default function App() {
   const [mode, setMode] = useState(null);
