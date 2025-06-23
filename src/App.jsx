@@ -4,6 +4,7 @@ import CGPAForm from "./components/CGPAForm";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import studentImg from "/assets/student1.png";
 import teacherImg from "/assets/teacher3.png";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const [mode, setMode] = useState(null);
@@ -16,6 +17,7 @@ export default function App() {
         color: "var(--text-color)",
       }}
     >
+     
       <ThemeSwitcher />
 
       {/* Floating Characters Positioned Near Edges of Welcome Box */}
@@ -97,6 +99,8 @@ export default function App() {
         {mode === "gpa" && <GPAForm goBack={() => setMode(null)} />}
         {mode === "cgpa" && <CGPAForm goBack={() => setMode(null)} />}
       </div>
+
+       <Analytics/>
     </div>
   );
 }
