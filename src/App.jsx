@@ -4,7 +4,8 @@ import CGPAForm from "./components/CGPAForm";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import studentImg from "/assets/student1.png";
 import teacherImg from "/assets/teacher3.png";
-import Adcomponent from "./components/Adcomponent"; // Fix import name casing
+import Adcomponent from "./components/Adcomponent";
+import { FaLinkedin, FaEnvelope, FaFiverr } from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
@@ -12,90 +13,140 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen p-6 relative transition"
+      className="min-h-screen p-6 transition"
       style={{
         background: "var(--primary-bg)",
         color: "var(--text-color)",
       }}
     >
       <ThemeSwitcher />
+      <div className="absolute top-6 left-6 flex items-center space-x-4 z-30">
+        <a
+          href="https://www.linkedin.com/in/faqeed-hassan-61004a25a"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full transition hover:scale-110"
+          style={{
+            color: "var(--text-color)",
+            backgroundColor: "rgba(255,255,255,0.1)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <FaLinkedin size={22} />
+        </a>
+        <a
+          href="mailto:hassanfaqeed12@gmail.com"
+          className="p-2 rounded-full transition hover:scale-110"
+          style={{
+            color: "var(--text-color)",
+            backgroundColor: "rgba(255,255,255,0.1)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <FaEnvelope size={22} />
+        </a>
+        <a
+          href="https://www.fiverr.com/sellers/taimoor5121472/edit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full transition hover:scale-110"
+          style={{
+            color: "var(--text-color)",
+            backgroundColor: "rgba(255,255,255,0.1)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <FaFiverr size={22} />
+        </a>
+      </div>
 
-      {/* Floating Characters (only on welcome screen) */}
-      {!mode && (
-        <>
-          {/* Teacher Side */}
-          <div className="hidden xl:flex hide-on-1560 flex-col items-center absolute left-4 top-1/2 transform -translate-y-1/2 animate-fade-in z-10">
-            <img
-              src={teacherImg}
-              alt="Teacher"
-              className="w-24 lg:w-32 hover:scale-105 transition duration-300"
-            />
-            <div
-              className="mt-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-xl text-sm shadow-md text-center"
-              style={{ color: "var(--text-color)" }}
-            >
-              Hello! I'm your teacher. Let's calculate!
-            </div>
-          </div>
-
-          {/* Student Side */}
-          <div className="hidden xl:flex hide-on-1560 flex-col items-center absolute right-4 top-1/2 transform -translate-y-1/2 animate-fade-in z-10">
-            <img
-              src={studentImg}
-              alt="Student"
-              className="w-24 lg:w-32 hover:scale-105 transition duration-300"
-            />
-            <div
-              className="mt-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-xl text-sm shadow-md text-center"
-              style={{ color: "var(--text-color)" }}
-            >
-              I'm excited to learn my GPA!
-            </div>
-          </div>
-        </>
-      )}
-
-      {/* Welcome/Calculator Box */}
-      <div className="max-w-5xl mx-auto my-16 bg-white/10 backdrop-blur-lg rounded-xl p-8 shadow-xl relative z-0">
+      {/* Wrap everything in a relative z-10 container */}
+      <div className="relative max-w-5xl m-70 mx-auto z-10">
+        {/* Characters - only shown on welcome screen */}
         {!mode && (
-          <div className="text-center space-y-6 animate-fade-in">
-            <h1 className="text-4xl font-bold">
-              Welcome to CGPA & GPA Calculator
-            </h1>
-            <p className="text-lg">Calculate your GPA or CGPA with ease!</p>
-            <div className="space-x-4 mt-6">
-              <button
-                onClick={() => setMode("gpa")}
+          <>
+            {/* Teacher (Left) */}
+            <div className="hidden md:flex hide-on-1560 flex-col items-center absolute -left-32 top-1/2 -translate-y-1/2 animate-fade-in z-20">
+              <img
+                src={teacherImg}
+                alt="Teacher"
+                className="w-24 lg:w-32 hover:scale-105 transition duration-300"
+              />
+              <div
+                className="mt-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-xl text-sm shadow-md text-center"
                 style={{
-                  backgroundColor: "orange",
-                  color: "var(--btn-text)",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  backdropFilter: "blur(8px)",
+                  color: "var(--text-color)",
                 }}
-                className="backdrop-blur-md border border-white/20 font-bold py-2 px-4 rounded-xl shadow hover:brightness-110 transition"
               >
-                GPA Calculator
-              </button>
-              <button
-                onClick={() => setMode("cgpa")}
-                style={{
-                  backgroundColor: "limegreen",
-                  color: "var(--btn-text)",
-                }}
-                className="backdrop-blur-md border border-white/20 font-bold py-2 px-4 rounded-xl shadow hover:brightness-110 transition"
-              >
-                CGPA Calculator
-              </button>
+                Hello! I'm your teacher. Let's calculate!
+              </div>
             </div>
 
-            {/* 📢 Ad Component only on welcome page */}
-            <div className="hidden md:block mt-10">
-              <Adcomponent />
+            {/* Student (Right) */}
+            <div className="hidden md:flex hide-on-1560 flex-col items-center absolute -right-24 top-1/2 -translate-y-1/2 animate-fade-in z-20">
+              <img
+                src={studentImg}
+                alt="Student"
+                className="w-24 lg:w-32 hover:scale-105 transition duration-300"
+              />
+              <div
+                className="mt-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-xl text-sm shadow-md text-center"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  backdropFilter: "blur(8px)",
+                  color: "var(--text-color)",
+                }}
+              >
+                I'm excited to learn my GPA!
+              </div>
             </div>
-          </div>
+          </>
         )}
 
-        {/* Conditional Form Render */}
-        {mode === "gpa" && <GPAForm goBack={() => setMode(null)} />}
-        {mode === "cgpa" && <CGPAForm goBack={() => setMode(null)} />}
+        {/* Main Welcome / Calculator Box */}
+        <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 shadow-xl z-10 relative">
+          {!mode && (
+            <div className="text-center space-y-6 animate-fade-in">
+              <h1 className="text-4xl font-bold">
+                Welcome to CGPA & GPA Calculator
+              </h1>
+              <p className="text-lg">Calculate your GPA or CGPA with ease!</p>
+              <div className="space-x-4 mt-6">
+                <button
+                  onClick={() => setMode("gpa")}
+                  style={{
+                    backgroundColor: "orange",
+                    color: "var(--btn-text)",
+                  }}
+                  className="backdrop-blur-md set-buttons border border-white/20 font-bold py-2 px-4 rounded-xl shadow hover:brightness-110 transition"
+                >
+                  GPA Calculator
+                </button>
+                <button
+                  onClick={() => setMode("cgpa")}
+                  style={{
+                    backgroundColor: "limegreen",
+                    color: "var(--btn-text)",
+                  }}
+                  className="backdrop-blur-md set-buttons border border-white/20 font-bold py-2 px-4 rounded-xl shadow hover:brightness-110 transition"
+                >
+                  CGPA Calculator
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* GPA/CGPA Form Rendering */}
+          {mode === "gpa" && <GPAForm goBack={() => setMode(null)} />}
+          {mode === "cgpa" && <CGPAForm goBack={() => setMode(null)} />}
+        </div>
+      </div>
+
+      {/* Ad Component at the very bottom */}
+      <div className="mt-10 hidden md:block text-center">
+        <Adcomponent />
       </div>
 
       <Analytics />
