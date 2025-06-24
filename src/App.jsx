@@ -19,6 +19,9 @@ export default function App() {
       }}
     >
       <ThemeSwitcher />
+      <div className="hidden md:block">
+        <Adcomponent />
+      </div>
 
       {/* Floating Characters Positioned Near Edges of Welcome Box */}
       {!mode && (
@@ -100,9 +103,7 @@ export default function App() {
         {mode === "cgpa" && <CGPAForm goBack={() => setMode(null)} />}
       </div>
 
-      <div className="hidden md:block">
-        <Adcomponent />
-      </div>
+      
 
       <Analytics />
     </div>
