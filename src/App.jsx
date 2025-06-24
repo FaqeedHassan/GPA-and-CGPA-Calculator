@@ -20,8 +20,6 @@ export default function App() {
     >
       <ThemeSwitcher />
       
-      <Adcomponent />
-      
 
       {/* Floating Characters Positioned Near Edges of Welcome Box */}
       {!mode && (
@@ -104,7 +102,7 @@ export default function App() {
       </div>
 
       
-
+      <Adcomponent />
       <Analytics />
     </div>
   );
