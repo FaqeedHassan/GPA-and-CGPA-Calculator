@@ -4,7 +4,6 @@ import CGPAForm from "./components/CGPAForm";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import studentImg from "/assets/student1.png";
 import teacherImg from "/assets/teacher3.png";
-import Adcomponent from "./components/Adcomponent";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
@@ -102,7 +101,6 @@ export default function App() {
       </div>
 
       
-      <Adcomponent />
       <Analytics />
     </div>
   );
