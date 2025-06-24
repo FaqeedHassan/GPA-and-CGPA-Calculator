@@ -19,9 +19,9 @@ export default function App() {
       }}
     >
       <ThemeSwitcher />
-      <div className="hidden md:block">
-        <Adcomponent />
-      </div>
+      
+      <Adcomponent />
+      
 
       {/* Floating Characters Positioned Near Edges of Welcome Box */}
       {!mode && (
