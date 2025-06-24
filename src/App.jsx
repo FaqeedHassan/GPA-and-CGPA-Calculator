@@ -100,9 +100,9 @@ export default function App() {
         {mode === "cgpa" && <CGPAForm goBack={() => setMode(null)} />}
       </div>
 
-      {/* <div className="hidden md:block">
+      <div className="hidden md:block">
         <Adcomponent />
-      </div> */}
+      </div>
 
       <Analytics />
     </div>
