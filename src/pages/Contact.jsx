@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="max-w-3xl mx-auto mt-20 pt-8 px-6 pb-12 rounded-xl backdrop-blur-md bg-white/10 shadow-md space-y-6 text-base md:text-lg" style={{ color: "var(--text-color)" }}>
+    <div className="max-w-3xl mb-40 mx-auto mt-20 pt-8 px-6 pb-12 rounded-xl backdrop-blur-md bg-white/10 shadow-md space-y-6 text-base md:text-lg" style={{ color: "var(--text-color)" }}>
       <h1 className="text-4xl font-bold">Contact</h1>
 
       <p>
